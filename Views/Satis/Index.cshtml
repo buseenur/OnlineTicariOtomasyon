@@ -1,0 +1,68 @@
+﻿@using OnlineTicariOtomasyon.Models.Siniflar
+@model List<SatisHareket>
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+}
+<br />
+<table id="tbl1" class=" table table-bordered">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ÜRÜN</th>
+            <th>CARİ</th>
+            <th>PERSONEL</th>
+            <th>ADET</th>
+            <th>FİYAT</th>
+            <th>TOPLAM</th>
+            <th>TARİH</th>
+            <th>GÜNCELLE</th>
+            <th>DETAYLAR</th>
+        </tr>
+    </thead>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.SatisID</td>
+            <td>@d.Urun.UrunAd</td>
+            <td>@d.Cariler.CariAd @d.Cariler.CariSoyad</td>
+            <td>@d.Personel.PersonelAd @d.Personel.PersonelSoyad</td>
+            <td>@d.Adet</td>
+            <td>@d.Fiyat</td>
+            <td>@d.ToplamTutar</td>
+            <td>@d.Tarih</td>
+            <td><a href="/Satis/SatisGetir/@d.SatisID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Satis/SatisDetay/@d.SatisID" class="btn btn-outline" style="background-color:beige">Detay</a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="/Satis/YeniSatis" class="btn btn-primary">Yeni Satış Yap</a>
+
+
+<link href="/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+
+    $('#tbl1').dataTable({
+        "language": {
+
+            "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
+
+        }
+    });
+
+ </script>
+

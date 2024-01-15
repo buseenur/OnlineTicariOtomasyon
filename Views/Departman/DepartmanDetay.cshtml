@@ -1,0 +1,38 @@
+﻿
+@model List<Personel>
+@using OnlineTicariOtomasyon.Models.Siniflar
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "DepartmanDetay";
+}
+
+<br />
+<h1>Departman Detay Sayfası</h1>
+<br />
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Departman Ad: @ViewBag.dp</li>
+    </ol>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Personel ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Görsel</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.PersonelID</td>
+            <td>@d.PersonelAd</td>
+            <td>@d.PersonelSoyad</td>
+            <td>@d.PersonelGorsel</td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@d.PersonelID" class="btn btn-info;" style="background-color:orangered;">Satışlar</a></td>
+
+        </tr>
+    }
+
+</table>
+
+

@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Models\Siniflar\" />
+    <None Remove="Views\Kategori\" />
+    <None Remove="Views\Urun\" />
+    <None Remove="Views\Departman\" />
+    <None Remove="Views\Cari\" />
+    <None Remove="Migrations\" />
+    <None Remove="Views\Personel\" />
+    <None Remove="Views\Satis\" />
+    <None Remove="Views\Fatura\" />
+    <None Remove="Views\Istatistik\" />
+    <None Remove="Views\Galeri\" />
+    <None Remove="Views\UrunDetay\" />
+    <None Remove="Views\Yapilacak\" />
+    <None Remove="Views\Login\" />
+    <None Remove="Views\CariPanel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Siniflar\" />
+    <Folder Include="wwwroot\Web\" />
+    <Folder Include="Views\Kategori\" />
+    <Folder Include="wwwroot\Web\dist\js\" />
+    <Folder Include="Views\Urun\" />
+    <Folder Include="Views\Departman\" />
+    <Folder Include="Views\Cari\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Views\Personel\" />
+    <Folder Include="Views\Satis\" />
+    <Folder Include="Views\Fatura\" />
+    <Folder Include="wwwroot\web2\" />
+    <Folder Include="Views\Istatistik\" />
+    <Folder Include="Views\Galeri\" />
+    <Folder Include="wwwroot\thumber\" />
+    <Folder Include="wwwroot\AdminLTE-3.0.4\" />
+    <Folder Include="Views\UrunDetay\" />
+    <Folder Include="Views\Yapilacak\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="wwwroot\weblogintema\" />
+    <Folder Include="wwwroot\webpanelticari\" />
+    <Folder Include="Views\CariPanel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Web\" />
+    <Content Remove="wwwroot\Web\dist\js\" />
+    <Content Remove="wwwroot\web2\" />
+    <Content Remove="wwwroot\thumber\" />
+    <Content Remove="wwwroot\AdminLTE-3.0.4\" />
+    <Content Remove="wwwroot\webloginthema\" />
+    <Content Remove="wwwroot\webpanelticari\" />
+  </ItemGroup>
+</Project>

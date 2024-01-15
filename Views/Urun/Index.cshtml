@@ -1,0 +1,40 @@
+﻿@using OnlineTicariOtomasyon.Models.Siniflar;
+@model List<Urun>
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>ÜRÜN</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIŞ FİYAT</th>
+        <th>SATIŞ FİYAT</th>
+        <th>KATEGORİ</th>
+        <th>GÖRSEL</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.UrunID</td>
+                <td>@u.UrunAd</td>
+                <td>@u.Marka</td>
+                <td>@u.Stok</td>
+                <td>@u.AlisFiyat</td>
+                <td>@u.SatisFiyat</td>
+                <td>@u.Kategori.KategoriID</td>
+                <td>@u.UrunGorsel</td>
+                <td><a href="/Urun/UrunSil/@u.UrunID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Urun/UrunGetir/@u.UrunID" class="btn btn-success">Güncelle</a></td>
+            </tr>
+
+        }
+
+</table>
+<br />
+<a href="/Urun/UrunEkle" class="btn btn-primary ml-1">Yeni Ürün</a>

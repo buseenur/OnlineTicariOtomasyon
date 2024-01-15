@@ -1,0 +1,18 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.Departman
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "DepartmanEkle";
+}
+<br />
+<h1>Departman Ekleme Sayfası</h1>
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.DepartmanAd)
+    @Html.TextBoxFor(x => x.DepartmanAd, new {@class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+

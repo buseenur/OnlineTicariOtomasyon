@@ -1,0 +1,26 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.Personel
+
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "PersonelEkle";
+}
+
+<br />
+<h1>Personel Ekleme Sayfası</h1>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.PersonelAd)
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelSoyad)
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelGorsel)
+    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new {@class = "form-control"})
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+ 
+</form>

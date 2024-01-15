@@ -1,0 +1,43 @@
+﻿@using OnlineTicariOtomasyon.Models.Siniflar
+@model List<Faturalar>
+
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<table class=" table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>SERİ NO</th>
+        <th>SIRA NO</th>
+        <th>VERGİ DAİRESİ</th>
+        <th>TARİH</th>
+        <th>SAAT</th>
+        <th>TESLİM EDEN</th>
+        <th>TESLİM ALAN</th>
+        <th>TOPLAM</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+
+            <td>@d.FaturaID</td>
+            <td>@d.FaturaSeriNo</td>
+            <td>@d.FaturaSıraNo</td>
+            <td>@d.VergiDairesi</td>
+            <td>@d.Tarih</td>
+            <td>@d.Saat</td>
+            <td>@d.TeslimEden</td>
+            <td>@d.TeslimAlan</td>
+            <td>@d.Toplam</td>
+            <td><a href="/Fatura/FaturaGetir/@d.FaturaID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Fatura/FaturaDetay/@d.FaturaID" class="btn btn-outline" style="background-color:beige">Detay</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Fatura/FaturaEkle" class="btn btn-primary">Yeni Fatura Girişi</a>

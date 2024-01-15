@@ -1,0 +1,41 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "SatisGetir";
+}
+
+<br />
+<h1>Satış İşlemi Güncelleme Sayfası</h1>
+<br />
+
+@using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.SatisID)
+        @Html.LabelFor(x => x.Urun)
+        @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1,new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Cariler)
+        @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.dgr2,new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Personel)
+        @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3,new { @class = "form-control" })
+        <br />
+
+        @Html.LabelFor(x => x.Adet)
+        @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Fiyat)
+        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ToplamTutar)
+        @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Tarih)
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+
+        <button class="btn btn-warning">Güncelle</button>
+
+        <br />
+    </div>
+}
